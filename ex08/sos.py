@@ -36,7 +36,11 @@ if ok == 1:
         for w in list:
             w = w.upper()
             for c in w:
-                final.append(MORSE_CODE_DICT[c])
+                if c in MORSE_CODE_DICT:
+                    final.append(MORSE_CODE_DICT[c])
+                else:
+                    print("ERROR")
+                    sys.exit()
             n += 1
             if (n != nb):
                 final.append("/")
